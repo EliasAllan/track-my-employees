@@ -1,32 +1,34 @@
 const inquirer = require("inquirer");
 
+// GIVEN a command-line application that accepts user input
+// WHEN I start the application
+// THEN I am presented with the following options: 'view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee','update an employee role'
 
-    inquirer
-      .prompt([
-        {
-          type: 'Input',
-          name: 'engName',
-          message: "What is the engineer's name ?"
-        },
-        {
-          type: 'Input',
-          name: 'engId',
-          message: "What is the engineer's ID ?"
-        },
-        {
-          type: 'Input',
-          name: 'engEmail',
-          message: "What is the engineer's email ?"
-        },
-        {
-          type: 'Input',
-          name: 'engGit',
-          message: "What is the engineer's GitHub username ?"
-        },
-        
-      ]).then((data) => {
-        // employeeArr.push(new Engineer(data.engName, data.engId, data.engEmail, data.engGit))
-        // console.log(employeeArr);
-        // mainMenu();
-      })
+
+
+  inquirer
+  .prompt([
+    {
+      type: 'list',
+      message: 'What do you want to do ?',
+      name: 'actions',
+      choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee','update an employee role']
+    },
+  ])
+
+  .then((data) => {
+    // switch (data.addemployee) {
+    
+    //   case 'Add an engineer':
+    //       addEng();
+    //       break;
+    //   case 'Add an intern':
+    //       addInt();
+    //       break;
+    //   default:
+    //       exit();
+    // }
+  });
+
+    
   
