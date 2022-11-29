@@ -13,16 +13,16 @@ INSERT INTO employee
 -- columns should match the values below
 (id,name)
 VALUES 
-("1", "Lee"),
-("2", "Bob"),
-("3", "Smith");
+("1","Lee"),
+("2","Bob"),
+("3","Smith");
 
-INSERT INTO department
+INSERT INTO `role`
 -- columns should match the values below
-(id,first_name, last_name,role_id,manager_id)
+(title,salary,department_id)
 VALUES 
-("1", "Lee", "Spirit","11","111"),
-("2", "Bob", "Belcher","22","222"),
-("3", "Smith", "Bourne","33","333");
+("Driver", "40.000","1111"),
+("Teacher", "40.000","2222"),
+("Security", "50.000","3333");
 
-SELECT * FROM department;
+SELECT * FROM course_names

@@ -10,7 +10,7 @@ CREATE TABLE employee(
 );
 
 -- Add role table --
-CREATE TABLE `role`(
+CREATE TABLE `role` (
   `id` INT PRIMARY KEY,
   `title` VARCHAR(30) NOT NULL,
   `salary` DECIMAL NOT NULL,
@@ -27,5 +27,5 @@ CREATE TABLE department(
 );
 
 -- SELECT * FROM role
-SELECT * FROM employee
+-- SELECT * FROM employee
 -- SELECT * FROM department
