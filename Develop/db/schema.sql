@@ -4,7 +4,7 @@ CREATE DATABASE employee_tracker_db;
 USE employee_tracker_db;
 
 -- Add employee table --
-CREATE TABLE employee(
+CREATE TABLE department(
   `id` INT PRIMARY KEY,
   `name` VARCHAR(100) NOT NULL
 );
@@ -18,7 +18,7 @@ CREATE TABLE `role` (
 );
 
 -- Add department table --
-CREATE TABLE department(
+CREATE TABLE employee(
   `id` INT PRIMARY KEY,
   `first_name` VARCHAR(30) NOT NULL,
   `last_name` VARCHAR(30) NOT NULL,

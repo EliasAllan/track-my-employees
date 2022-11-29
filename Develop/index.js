@@ -13,10 +13,45 @@ const viewDepart = () => {
     "SELECT * FROM department",
     (err, result) => {
       if(err) console.error(err);
+      console.log(result)
       let formattedResult = result.map( obj => Object.values(obj));
       // add column names
-      // formattedResult.unshift([("id","first_name","last_name","role_id","manager_id")]);
-      // console.log(formattedResult);
+      // formattedResult.unshift([("id","first_name" ,"last_name","role_id","manager_id")]);
+      console.log(formattedResult);
+      console.log(table(formattedResult));
+      mainMenu();
+    }
+  )
+}
+
+const viewAllRoles = () => {
+  return connection.query(
+    // read from pilots
+    "SELECT * FROM `role`",
+    (err, result) => {
+      if(err) console.error(err);
+      console.log(result)
+      let formattedResult = result.map( obj => Object.values(obj));
+      // add column names
+      // formattedResult.unshift([("id","first_name" ,"last_name","role_id","manager_id")]);
+      console.log(formattedResult);
+      console.log(table(formattedResult));
+      mainMenu();
+    }
+  )
+}
+
+const viewAllEmp = () => {
+  return connection.query(
+    // read from pilots
+    "SELECT * FROM employee",
+    (err, result) => {
+      if(err) console.error(err);
+      console.log(result)
+      let formattedResult = result.map( obj => Object.values(obj));
+      // add column names
+      // formattedResult.unshift([("id","first_name" ,"last_name","role_id","manager_id")]);
+      console.log(formattedResult);
       console.log(table(formattedResult));
       mainMenu();
     }
@@ -40,9 +75,12 @@ const mainMenu = () => {
       case 'view all departments':
         viewDepart();
           break;
-      // case 'Add an intern':
-      //     addInt();
-      //     break;
+      case 'view all roles':
+        viewAllRoles();
+          break;
+      case 'view all employees':
+        viewAllEmp();
+          break;
       // default:
       //     exit();
     }
