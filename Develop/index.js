@@ -90,39 +90,73 @@ const addRole = () => {
     {
       type: 'input',
       name: 'title',
-      message: "What is the roles title"
+      message: "add title"
     },
     {
       type: 'input',
       name: 'salary',
-      message: "What is the roles salary"
+      message: "add salary"
     },
     {
       type: 'input',
-      name: 'salary',
-      message: "What is the roles salary"
+      name: 'department_id',
+      message: "add department id"
     },
-  ]).then((data) => {
-    // employeeArr.push(new Engineer(data.engName, data.engId, data.engEmail, data.engGit))
-    // console.log(employeeArr);
-    mainMenu();
-  })
+  ])
+  .then( param => {
+    connection.query(
+    `INSERT INTO role SET ?`,
+    [
+      param
+    ],
+   
+    function (err, result) {
+      if (err) {
+        console.log(err);
+      }
+      mainMenu();
+    });
+  });
 }
 
 const addEmployee = () => {
   inquirer
   .prompt([
     {
-      type: '',
-      name: '',
-      message: ""
+      type: 'input',
+      name: 'first_name',
+      message: "add first name"
+    },
+    {
+      type: 'input',
+      name: 'last_name',
+      message: "add last name"
+    },
+    {
+      type: 'input',
+      name: 'role_id',
+      message: "add role id"
+    },
+    {
+      type: 'input',
+      name: 'manager_id',
+      message: "add manager id"
     },
   ])
-  .then((data) => {
-    // employeeArr.push(new Engineer(data.engName, data.engId, data.engEmail, data.engGit))
-    // console.log(employeeArr);
-    mainMenu();
-  })
+  .then( param => {
+    connection.query(
+    `INSERT INTO employee SET ?`,
+    [
+      param
+    ],
+   
+    function (err, result) {
+      if (err) {
+        console.log(err);
+      }
+      mainMenu();
+    });
+  });
 }
 
 const mainMenu = () => {
