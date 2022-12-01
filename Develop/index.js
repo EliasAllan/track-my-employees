@@ -88,9 +88,19 @@ const addRole = () => {
   inquirer
   .prompt([
     {
-      type: '',
-      name: '',
-      message: ""
+      type: 'input',
+      name: 'title',
+      message: "What is the roles title"
+    },
+    {
+      type: 'input',
+      name: 'salary',
+      message: "What is the roles salary"
+    },
+    {
+      type: 'input',
+      name: 'salary',
+      message: "What is the roles salary"
     },
   ]).then((data) => {
     // employeeArr.push(new Engineer(data.engName, data.engId, data.engEmail, data.engGit))
