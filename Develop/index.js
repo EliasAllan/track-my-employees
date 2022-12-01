@@ -63,32 +63,22 @@ const addDepartment = () => {
   .prompt([
     {
       type: 'Input',
-      name: 'id',
+      name: 'name',
       message: "Enter department name"
     },
   ])
-  // .then( ({first_name, last_name, airline_name}) => {
     .then( param => {
-    
       connection.query(
       `INSERT INTO department SET ?`,
       [
-        // {
-        //   first_name: "Bob", // first_name = "Bob",
-        //   last_name: "Taco", // last_name = "Taco",
-        //   airline_name: "Always Late Air" // airline_name = "Always Late Air"
-        // }
         param
       ],
-      /*
-      INSERT INTO pilots SET first_name = "Bob", last_name = "Taco", airline_name = "Always Late Air"
-      */
+     
       function (err, result) {
         if (err) {
           console.log(err);
         }
-        // console.log(result);
-        mainmenu();
+        mainMenu();
       });
     });
     
@@ -98,9 +88,9 @@ const addRole = () => {
   inquirer
   .prompt([
     {
-      type: 'Input',
-      name: 'id',
-      message: "Enter department name"
+      type: '',
+      name: '',
+      message: ""
     },
   ]).then((data) => {
     // employeeArr.push(new Engineer(data.engName, data.engId, data.engEmail, data.engGit))
@@ -113,9 +103,9 @@ const addEmployee = () => {
   inquirer
   .prompt([
     {
-      type: 'Input',
-      name: 'id',
-      message: "Enter department name"
+      type: '',
+      name: '',
+      message: ""
     },
   ])
   .then((data) => {
