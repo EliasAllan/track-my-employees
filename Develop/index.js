@@ -16,7 +16,7 @@ const viewDepart = () => {
       console.log(result)
       let formattedResult = result.map( obj => Object.values(obj));
       // add column names
-      // formattedResult.unshift([("id","first_name" ,"last_name","role_id","manager_id")]);
+      formattedResult.unshift(["id","name"]);
       console.log(formattedResult);
       console.log(table(formattedResult));
       mainMenu();
@@ -27,14 +27,13 @@ const viewDepart = () => {
 const viewAllRoles = () => {
   return connection.query(
     // read from pilots
-    "SELECT * FROM `role`",
+    "SELECT role.title,role.id,department.name,role.salary FROM role JOIN department ON department.id = role.department_id",
     (err, result) => {
       if(err) console.error(err);
       console.log(result)
       let formattedResult = result.map( obj => Object.values(obj));
       // add column names
-      // formattedResult.unshift([("id","first_name" ,"last_name","role_id","manager_id")]);
-      console.log(formattedResult);
+      formattedResult.unshift(["id","title","salary","department"]);      console.log(formattedResult);
       console.log(table(formattedResult));
       mainMenu();
     }
