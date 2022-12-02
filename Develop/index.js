@@ -33,7 +33,7 @@ const viewAllRoles = () => {
       console.log(result)
       let formattedResult = result.map( obj => Object.values(obj));
       // add column names
-      formattedResult.unshift(["title","id","department","salary"]);      console.log(formattedResult);
+      formattedResult.unshift(["title","role id","department","salary"]);      console.log(formattedResult);
       console.log(table(formattedResult));
       mainMenu();
     }
@@ -90,17 +90,17 @@ const addRole = () => {
     {
       type: 'input',
       name: 'title',
-      message: "add title"
+      message: "What is the title ?"
     },
     {
       type: 'input',
       name: 'salary',
-      message: "add salary"
+      message: "What is the salary ?"
     },
     {
       type: 'input',
       name: 'department_id',
-      message: "add department id"
+      message: "What is the department id ?"
     },
   ])
   .then( param => {
