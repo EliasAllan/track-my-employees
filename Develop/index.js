@@ -43,7 +43,7 @@ const viewAllRoles = () => {
 const viewAllEmp = () => {
   return connection.query(
     // read from pilots
-    "SELECT employee.id,employee.first_name,employee.last_name,role.title,department.name,role.salary,employee.manager_id FROM employee JOIN role ON role.id = employee.role_id JOIN department ON department.id = role.department_id",
+    "SELECT employee.id,employee.first_name,employee.last_name,role.title,department.name,role.salary, CONCAT(manager.first_name, ' ', manager.last_name) FROM employee JOIN role  ON role.id = employee.role_id JOIN department  ON department.id = role.department_id LEFT JOIN employee manager ON manager.id = employee.manager_id;",
     // role.title,department.name,role.salary,employee.first_name FROM employee JOIN role ON department.id = role.department_id",
     (err, result) => {
       if(err) console.error(err);
