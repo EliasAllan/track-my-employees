@@ -27,3 +27,14 @@ VALUES
 ("2", "Lee","Spirit","2","1"),
 ("3", "Smith","Bourne","3","2"),
 ("4", "Morpheus","Osbourne","4","2");
+
+-- SELECT role.title,role.id,department.name,role.salary 
+-- FROM role JOIN department 
+-- ON department.id = role.department_id
+
+SELECT employee.id,employee.first_name,employee.last_name,role.title,department.name,role.salary,employee.manager_id
+FROM employee JOIN role 
+ON role.id = employee.role_id
+JOIN department 
+ON department.id = role.department_id
+
